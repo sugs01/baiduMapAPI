@@ -2,7 +2,7 @@
 % Please edit documentation in R/getGeoCoding.R
 \name{getGeoCoding}
 \alias{getGeoCoding}
-\title{Geocoder of Baidu map API, https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding}
+\title{Get longitude and latitude through Baidu map API}
 \usage{
 getGeoCoding(
   ak = NULL,
@@ -14,17 +14,28 @@ getGeoCoding(
 )
 }
 \arguments{
-\item{ak}{, 用户申请注册的key，自v2开始参数修改为“ak”}
+\item{ak}{user must register their ak (key) before use.}
 
-\item{address}{, 待解析的地址。最多支持84个字节。可以输入两种样式的值，分别是： 1、标准的结构化地址信息，如北京市海淀区上地十街十号 【推荐，地址结构越完整，解析精度越高】2、支持“*路与*路交叉口”描述方式，如北一环路和阜阳路的交叉路口}
+\item{address}{the address to parse}
 
-\item{city}{,地址所在的城市名。用于指定上述地址所在的城市，当多个城市都有上述地址时，该参数起到过滤作用，但不限制坐标召回城市。}
+\item{city}{the city of address}
 
-\item{output}{}
+\item{ret_coordtype}{the type of coordinate}
+
+\item{sn}{not necessary}
+
+\item{output}{must by json}
 }
 \value{
-
+Longitude and latitude of address
 }
 \description{
-Geocoder of Baidu map API, https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding
+Get longitude and latitude through Baidu map API
+}
+\details{
+[Detail document reference](https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding)
+}
+\examples{
+getGeoCoding(ak = '92RLPSx3RqhlaNGjGTdzL2f2iqHmgl4f', address = 'beijing')
+
 }

@@ -1,16 +1,19 @@
-#' Geocoder of Baidu map API, https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding
+#' Get longitude and latitude through Baidu map API
 #'
-#' @param ak , 用户申请注册的key，自v2开始参数修改为“ak”
-#' @param address , 待解析的地址。最多支持84个字节。可以输入两种样式的值，分别是： 1、标准的结构化地址信息，如北京市海淀区上地十街十号 【推荐，地址结构越完整，解析精度越高】2、支持“*路与*路交叉口”描述方式，如北一环路和阜阳路的交叉路口
-#' @param city ,地址所在的城市名。用于指定上述地址所在的城市，当多个城市都有上述地址时，该参数起到过滤作用，但不限制坐标召回城市。
-#' @param ret_coordtype
-#' @param sn
-#' @param output
+#' @param ak user must register their ak (key) before use.
+#' @param address the address to parse
+#' @param city the city of address
+#' @param ret_coordtype the type of coordinate
+#' @param sn not necessary
+#' @param output must by json
+#' @details [Detail document reference](https://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding)
 #'
-#' @return
+#' @return Longitude and latitude of address
 #' @export
 #'
 #' @examples
+#' getGeoCoding(ak = '92RLPSx3RqhlaNGjGTdzL2f2iqHmgl4f', address = 'beijing')
+#'
 getGeoCoding <- function(ak = NULL, address = NULL, city = NULL, ret_coordtype = 'gcj02ll', sn = NULL, output = 'json') {
    t_url = 'https://api.map.baidu.com/geocoding/v3/?'
    t_ak = paste0('ak=', ak)
