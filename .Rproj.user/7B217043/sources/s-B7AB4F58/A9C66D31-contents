@@ -1,0 +1,10 @@
+Package: baiduMapAPI
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Su Gaosheng
+Maintainer: sugs01@outlook.com
+Description: Call the API of Baidu Map
+License: NO
+Encoding: UTF-8
+LazyData: true
